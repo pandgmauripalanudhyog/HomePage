@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>बलमडाडा मह | ग्यालरी</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Lightbox modal styles */
+    #lightboxModal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    #lightboxModal img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.7);
+    }
+  </style>
+</head>
+<body>
+    <!-- Menu -->
+  <nav class="nav-bar">
+    <div class="container">
+      <ul>
+        <li><a href="index.html">गृहपृष्ठ</a></li>
+        <li><a href="contact.html">सम्पर्क</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <h1>ग्यालरी</h1>
+      <p>हाम्रो मह उत्पादन र मौरी पालनका झलकहरू</p>
+    </div>
+  </header>
+
+
+
+  <section class="section">
+    <div class="container">
+      <h2>तस्बिरहरू</h2>
+      
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <a href="honey3.jpg"><img src="honey3.jpg" alt="तस्बिर 1" /></a>
+        </div>
+        <div class="gallery-item">
+          <a href="honey4.jpg"><img src="honey4.jpg" alt="तस्बिर 2" /></a>
+        </div>
+        <div class="gallery-item">
+          <a href="honey1.jpg"><img src="honey1.jpg" alt="तस्बिर 3" /></a>
+        </div>
+        <div class="gallery-item">
+          <a href="honey12.jpg"><img src="honey12.jpg" alt="तस्बिर 4" /></a>
+        </div>
+        <div class="gallery-item">
+          <a href="honey2.jpg"><img src="honey2.jpg" alt="तस्बिर 5" /></a>
+        </div>
+        <div class="gallery-item">
+          <a href="honey6.jpg"><img src="honey6.jpg" alt="तस्बिर 6" /></a>
+        </div>
+        <div class="gallery-item">
+          <a href="honey7.jpg"><img src="honey7.jpg" alt="तस्बिर 7" /></a>
+        </div>
+        <div class="gallery-item">
+          <a href="honey8.jpg"><img src="honey8.jpg" alt="तस्बिर 8" /></a>
+        </div>
+        <div class="gallery-item">
+            <a href="honey9.jpg"><img src="honey9.jpg" alt="तस्बिर 8" /></a>
+          </div>
+          <div class="gallery-item">
+            <a href="honey10.jpg"><img src="honey10.jpg" alt="तस्बिर 8" /></a>
+          </div>
+          <div class="gallery-item">
+            <a href="honey11.jpg"><img src="honey11.jpg" alt="तस्बिर 8" /></a>
+          </div>
+          <div class="gallery-item">
+            <a href="honey5.jpg"><img src="honey5.jpg" alt="तस्बिर 8" /></a>
+          </div>
+          <div class="gallery-item">
+            <a href="honey13.jpg"><img src="honey13.jpg" alt="तस्बिर 8" /></a>
+          </div>
+          <div class="gallery-item">
+            <a href="honey14.jpg"><img src="honey14.jpg" alt="तस्बिर 8" /></a>
+          </div>
+          <div class="gallery-item">
+            <a href="honey15.jpg"><img src="honey15.jpg" alt="तस्बिर 8" /></a>
+          </div>
+          
+          
+      </div>
+
+      <p style="margin-top:1rem;">मौरी पालन र प्याकेजिङ्ग प्रक्रिया</p>
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal">
+    <img src="" alt="Full Image" />
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; पि एन्ड जी मौरी तथा मह उद्योग | सम्पर्क: ९८४३०८३२२१/९८४०३४२४५९</p>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript for lightbox modal
+    const lightbox = document.getElementById('lightboxModal');
+    const lightboxImage = lightbox.querySelector('img');
+    const galleryLinks = document.querySelectorAll('.gallery-item a');
+
+    galleryLinks.forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        lightboxImage.src = link.href;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImage.src = '';
+    });
+  </script>
+
+</body>
+</html>
